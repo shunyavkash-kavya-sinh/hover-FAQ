@@ -1,0 +1,143 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #181d27;
+  user-select: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+.faq-sec {
+  padding-block: 100px;
+}
+
+.faq-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.main-faq-block {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.faq-wrap {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.316);
+  position: relative;
+  transition: border-color 500ms ease-in-out, background-image 500ms ease-in-out;
+  cursor: pointer;
+  padding-top: 30px;
+}
+
+.plus-img {
+  width: 30px;
+  height: 30px;
+  transition: all 500ms ease-in-out;
+}
+
+.plus-img img {
+  height: 100%;
+  object-fit: contain;
+}
+
+.faq-img {
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(-50%) rotate(-15deg);
+  border-radius: 50px;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 800ms ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.357);
+}
+
+.faq-img img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.faq-main-title {
+  font-size: 50px;
+  margin-bottom: 50px;
+  color: white;
+}
+
+.faq-block-title {
+  color: white;
+  font-size: 30px;
+}
+
+.plus-img {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(6%) saturate(24%)
+    hue-rotate(275deg) brightness(108%) contrast(105%);
+  border: 1px solid white;
+  border-radius: 50%;
+}
+
+.faq-content {
+  color: #d4d4d4;
+  line-height: 1.6;
+  font-size: 18px;
+  max-width: 800px;
+}
+
+.faq-visible {
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 500ms ease-in-out;
+  margin-top: 0;
+}
+
+.faq-wrap:hover .faq-visible,
+.faq-wrap.active-accordion .faq-visible {
+  opacity: 1;
+  visibility: visible;
+  max-height: 700px;
+  padding-bottom: 50px;
+}
+
+.faq-wrap:hover,
+.faq-wrap.active-accordion {
+  border-bottom: 1px solid transparent;
+  background-image: linear-gradient(
+    270deg,
+    #181d27,
+    #181d27 18%,
+    #a68cad33 33%,
+    #937d9b40 47%,
+    #38364580 60%,
+    #181d27 84%
+  );
+}
+
+.faq-wrap:hover .plus-img,
+.faq-wrap.active-accordion .plus-img {
+  transform: rotate(45deg);
+}
+
+.faq-wrap:hover .faq-img,
+.faq-wrap.active-accordion .faq-img {
+  opacity: 1;
+}
