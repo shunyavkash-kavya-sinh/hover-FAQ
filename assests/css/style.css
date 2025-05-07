@@ -45,6 +45,7 @@ img {
   transition: border-color 500ms ease-in-out, background-image 500ms ease-in-out;
   cursor: pointer;
   padding-top: 30px;
+  background-clip: padding-box;
 }
 
 .plus-img {
@@ -120,7 +121,7 @@ img {
 
 .faq-wrap:hover,
 .faq-wrap.active-accordion {
-  border-bottom: 1px solid transparent;
+  border-bottom-color: transparent;
   background-image: linear-gradient(
     270deg,
     #181d27,
